@@ -229,12 +229,19 @@ input, select, textarea {
     color: var(--accent-green);
 }
 
+.nav-mobile-actions {
+    display: none;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
     gap: 5px;
     padding: 8px;
     border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 .nav-toggle span {
