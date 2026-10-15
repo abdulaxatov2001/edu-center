@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhfillo Edu Center — O'quvchilar test natijalari va reyting tizimi. Real-time analitika.">
+    <title>Muhfillo Edu Center — Reyting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <rect width="28" height="28" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M8 14L12 18L20 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28">
+                                <stop stop-color="#10B981"/>
+                                <stop offset="1" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Muhfillo <span class="logo-accent">Edu</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                    Reyting
+                </a>
+                <a href="login.html" class="nav-link nav-link--login">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                    Kirish
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menyu ochish">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb--1"></div>
+            <div class="hero-orb hero-orb--2"></div>
+            <div class="hero-orb hero-orb--3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Real-time yangilanadi
+                </div>
+                <h1 class="hero-title">
+                    O'quvchilar <span class="gradient-text">Reytingi</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Test natijalarini kuzating, tahlil qiling va eng yaxshi natijalarni kutib oling
+                </p>
+            </div>
+
+            <!-- ===== STATS CARDS ===== -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card stat-card--students">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalStudents">0</span>
+                        <span class="stat-label">O'quvchilar</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-card--tests">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalTests">0</span>
+                        <span class="stat-label">Testlar</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-card--avg">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="avgScore">0%</span>
+                        <span class="stat-label">O'rtacha ball</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-card--top">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="topScore">0%</span>
+                        <span class="stat-label">Eng yuqori</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FILTERS ===== -->
+    <section class="filters-section" id="filtersSection">
+        <div class="container">
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label class="filter-label">Test bo'yicha:</label>
+                    <select class="filter-select" id="filterTest">
+                        <option value="all">Barcha testlar</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Guruh:</label>
+                    <select class="filter-select" id="filterGroup">
+                        <option value="all">Barcha guruhlar</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="O'quvchi qidirish...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RATING TABLE ===== -->
+    <section class="rating-section" id="ratingSection">
+        <div class="container">
+            <div class="rating-header">
+                <h2 class="section-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Reyting Jadvali
+                </h2>
+                <div class="rating-sort">
+                    <button class="sort-btn active" data-sort="total" id="sortTotal">Umumiy ball</button>
+                    <button class="sort-btn" data-sort="latest" id="sortLatest">Oxirgi test</button>
+                    <button class="sort-btn" data-sort="name" id="sortName">Ism</button>
+                </div>
+            </div>
+
+            <!-- Top 3 Podium -->
+            <div class="podium" id="podium">
+                <div class="podium-item podium-item--2" id="podium2">
+                    <div class="podium-avatar">
+                        <div class="podium-rank">2</div>
+                    </div>
+                    <div class="podium-name">—</div>
+                    <div class="podium-score">0%</div>
+                    <div class="podium-bar"></div>
+                </div>
+                <div class="podium-item podium-item--1" id="podium1">
+                    <div class="podium-crown">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 19h19l-2-14-5 5-2.5-5-2.5 5-5-5z"/></svg>
+                    </div>
+                    <div class="podium-avatar podium-avatar--gold">
+                        <div class="podium-rank">1</div>
+                    </div>
+                    <div class="podium-name">—</div>
+                    <div class="podium-score">0%</div>
+                    <div class="podium-bar"></div>
+                </div>
+                <div class="podium-item podium-item--3" id="podium3">
+                    <div class="podium-avatar">
+                        <div class="podium-rank">3</div>
+                    </div>
+                    <div class="podium-name">—</div>
+                    <div class="podium-score">0%</div>
+                    <div class="podium-bar"></div>
+                </div>
+            </div>
+
+            <!-- Rating Table -->
+            <div class="table-wrapper">
+                <table class="rating-table" id="ratingTable">
+                    <thead>
+                        <tr>
+                            <th class="th-rank">#</th>
+                            <th class="th-name">O'quvchi</th>
+                            <th class="th-group">Guruh</th>
+                            <th class="th-tests">Testlar</th>
+                            <th class="th-correct">To'g'ri</th>
+                            <th class="th-score">Ball (%)</th>
+                            <th class="th-trend">Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratingTableBody">
+                        <!-- Dinamik to'ldiriladi -->
+                    </tbody>
+                </table>
+                <div class="table-empty" id="tableEmpty" style="display: none;">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <p>Hozircha natijalar yo'q</p>
+                    <span>Test natijalari kiritilgach bu yerda ko'rinadi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Muhfillo Edu Center</span>
+                <span class="footer-copy">© 2026 Barcha huquqlar himoyalangan</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/rating.js"></script>
+</body>
+</html>

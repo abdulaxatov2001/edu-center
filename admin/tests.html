@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testlar — Muhfillo Edu Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#sLG)"/><path d="M8 14L12 18L20 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sLG" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#10B981"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs></svg></div>
+                <span class="logo-text">Muhfillo <span class="logo-accent">Edu</span></span>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+            <a href="tests.html" class="sidebar-link active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Testlar</a>
+            <a href="students.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>O'quvchilar</a>
+            <a href="analytics.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analitika</a>
+            <div class="sidebar-divider"></div>
+            <a href="../index.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Reyting</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-user" id="sidebarUser"><div class="user-avatar">A</div><div class="user-info"><span class="user-name" id="userName">Admin</span><span class="user-role" id="userRole">Administrator</span></div></div>
+            <button class="btn-logout" id="logoutBtn" title="Chiqish"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></button>
+        </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+        <header class="content-header">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menyu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+            <div class="header-title"><h1>Testlar</h1><p class="header-subtitle">Test savollarini yarating va boshqaring</p></div>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn btn-outline" id="manageSubjectsBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    Fanlar boshqaruvi
+                </button>
+                <button class="btn btn-primary" id="createTestBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    Yangi test
+                </button>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <!-- Test list -->
+            <div class="card-list" id="testList">
+                <div class="empty-state" id="testsEmpty">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <p>Hozircha testlar yo'q</p>
+                    <span>"Yangi test" tugmasini bosib test yarating</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== CREATE TEST MODAL (PDF/Word + Answers Key) ===== -->
+    <div class="modal-overlay" id="testModal" style="display:none;">
+        <div class="modal modal--lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Yangi test yaratish</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="testForm">
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 2;">
+                            <label class="form-label">Test nomi</label>
+                            <input type="text" class="form-input" id="testTitle" placeholder="Masalan: 10-sinf Matematika — 1-chorak" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label class="form-label">Fan</label>
+                            <div style="display: flex; gap: 6px;">
+                                <select class="form-input" id="testSubject" required>
+                                    <option value="">Fanni tanlang...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PDF / Word Fayl yuklash -->
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label class="form-label">Test faylini yuklash (PDF yoki Word / Rasm)</label>
+                        <div class="file-upload-zone" id="fileUploadZone" style="border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; background: var(--bg-glass); cursor: pointer; transition: all 0.2s ease;">
+                            <input type="file" id="testFileInput" accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/*" style="display: none;">
+                            <div id="uploadPrompt">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" style="margin-bottom: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary);">Test savollari faylini tanlang (PDF yoki Word)</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Faylni sudrab tashlang yoki bu yerni bosing (.pdf, .docx, .doc, .png, .jpg)</div>
+                            </div>
+                            <div id="filePreviewBox" style="display: none; align-items: center; justify-content: space-between; padding: 10px 16px; background: rgba(59, 130, 246, 0.1); border-radius: var(--radius-sm); border: 1px solid rgba(59, 130, 246, 0.3);">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="font-size: 1.5rem;" id="fileIcon">📄</span>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: 600; font-size: 0.9rem;" id="fileNameDisplay">—</div>
+                                        <div style="font-size: 0.78rem; color: var(--text-muted);" id="fileSizeDisplay">—</div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-ghost" id="removeFileBtn" style="color: var(--accent-red);">&times; Bekor qilish</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savollar soni va To'g'ri javoblar -->
+                    <div class="questions-section" style="margin-top: 1.5rem;">
+                        <div class="form-row" style="align-items: flex-end; margin-bottom: 1rem;">
+                            <div class="form-group" style="max-width: 180px;">
+                                <label class="form-label">Savollar soni</label>
+                                <input type="number" class="form-input" id="testQuestionCount" value="10" min="1" max="100" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label class="form-label">Tezkor javoblar (Ixtiyoriy: masalan, ABCDACDB...)</label>
+                                <input type="text" class="form-input" id="quickAnswersInput" placeholder="Masalan: ABCDABCDAB... (yozishingiz bilan pastdagi tugmalar avtomatik belgilanadi)">
+                            </div>
+                        </div>
+
+                        <div class="questions-header" style="margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 0.95rem;">To'g'ri javoblar kaliti</h3>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);" id="answeredCountBadge">0 / 10 ta belgilandi</span>
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">Har bir savol uchun to'g'ri javobni (A, B, C yoki D) bosing:</p>
+
+                        <!-- Answers Grid for selecting correct options -->
+                        <div class="answers-grid" id="answersKeyGrid" style="max-height: 280px; overflow-y: auto; padding: 4px;">
+                            <!-- Dinamik savollar soniga qarab chiqadi -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-ghost" id="modalCancel">Bekor qilish</button>
+                <button type="button" class="btn btn-primary" id="saveTestBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                    Testni saqlash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SUBJECTS (FANLAR) MANAGEMENT MODAL ===== -->
+    <div class="modal-overlay" id="subjectsModal" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Fanlar boshqaruvi</h2>
+                <button class="modal-close" id="subjectsModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="newSubjectForm" style="display: flex; gap: 8px; margin-bottom: 1.5rem;">
+                    <input type="text" class="form-input" id="newSubjectName" placeholder="Yangi fan nomi (masalan: Geografiya)" required style="flex: 1;">
+                    <button type="submit" class="btn btn-primary" id="addSubjectBtn">Qo'shish</button>
+                </form>
+
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Mavjud fanlar:</div>
+                <div id="subjectsList" style="display: flex; flex-direction: column; gap: 6px; max-height: 260px; overflow-y: auto;">
+                    <!-- Dinamik fanlar ro'yxati -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-ghost" id="subjectsModalOk">Yopish</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin-tests.js"></script>
+</body>
+</html>
