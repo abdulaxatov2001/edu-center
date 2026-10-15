@@ -27,15 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tableEmpty = document.getElementById('tableEmpty');
     const sortBtns = document.querySelectorAll('.sort-btn');
 
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
-
     // 1. Load Data
     async function loadData() {
         try {

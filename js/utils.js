@@ -646,7 +646,8 @@ function initSidebar() {
     const overlay = document.getElementById('sidebarOverlay');
 
     if (toggle && sidebar) {
-        toggle.addEventListener('click', () => {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             sidebar.classList.toggle('open');
             if (overlay) overlay.classList.toggle('active');
         });
@@ -660,8 +661,54 @@ function initSidebar() {
     }
 }
 
+// Public Navbar Mobile Menu Toggle
+function initNavMenu() {
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (!navToggle || !navLinks) return;
+
+    function toggleMenu(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const isOpen = navLinks.classList.toggle('open');
+        navLinks.classList.toggle('active', isOpen);
+        navToggle.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('open', 'active');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    // Toggle on click
+    navToggle.addEventListener('click', toggleMenu);
+
+    // Close on any link click inside menu
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+}
+
 // Check configuration status & show gentle hint if using demo mode
 document.addEventListener('DOMContentLoaded', () => {
+    initNavMenu();
     initSidebar();
 
     // If using demo mode, show once in console or subtle banner
@@ -669,3 +716,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.info('ℹ️ Firebase sozlanmagan. Tizim to\'liq Demo/Offline rejimida ishlamoqda.');
     }
 });
+
+// Also run immediately if DOM is already parsed
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initNavMenu();
+    initSidebar();
+}

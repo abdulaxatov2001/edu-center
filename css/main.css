@@ -229,19 +229,18 @@ input, select, textarea {
     color: var(--accent-green);
 }
 
-.nav-mobile-actions {
-    display: none;
-}
-
 .nav-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     padding: 8px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     background: transparent;
     border: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-toggle span {
@@ -251,6 +250,7 @@ input, select, textarea {
     background: var(--text-secondary);
     border-radius: 2px;
     transition: all var(--transition-base);
+    pointer-events: none;
 }
 
 /* ---------- Hero Section ---------- */
